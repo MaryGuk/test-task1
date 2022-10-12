@@ -1,6 +1,5 @@
-import logo from "./logo.svg";
-import ExcursionCard from "./components/ExcursionCard";
 import { MainLayout } from "./styled";
+import ExcursionCard from "./components/ExcursionCard";
 
 function App() {
   return (
