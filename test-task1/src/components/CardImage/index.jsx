@@ -4,6 +4,7 @@ const CardImage = (props) => {
   return (
     <CardImageBody>
       <StyledImage src={props.imageSrc} />
+     
     </CardImageBody>
   );
 };

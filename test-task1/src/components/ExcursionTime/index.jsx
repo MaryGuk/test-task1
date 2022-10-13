@@ -1,15 +1,13 @@
-
+import { ExcursionTimeItems, StyledText } from "./styled";
+import Clock from "./clock.svg";
 
 const ExcursionTime = (props) => {
-   return (
-      <ExcursionTimeItems>
-      <IconItem src={props.iconSrc} />
-         <div>
-            значок часов
-         </div>
-         <div> 2 часа текст </div>
-      </ExcursionTimeItems>
-   )
-}
+  return (
+    <ExcursionTimeItems>
+      <img src={Clock} />
+      <StyledText> {`${props.hours} часа`} </StyledText>
+    </ExcursionTimeItems>
+  );
+};
 
 export default ExcursionTime;
