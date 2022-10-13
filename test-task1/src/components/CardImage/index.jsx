@@ -1,9 +1,9 @@
 import { CardImageBody, StyledImage } from "./styled";
 
-const CardImage = () => {
+const CardImage = (props) => {
   return (
     <CardImageBody>
-      <StyledImage src="%PUBLIC_URL%/resources/img1.png" />
+      <StyledImage src={props.imageSrc} />
     </CardImageBody>
   );
 };
