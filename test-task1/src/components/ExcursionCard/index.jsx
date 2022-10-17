@@ -16,7 +16,7 @@ const ExcursionCard = (props) => {
           </MainExcursionInfo>
           <CardDescription timings={props.timings} />
         </div>
-        <CardFooter price={props.price} />
+        <CardFooter price={props.price} priceNotes={props.priceNotes} />
       </CardContent>
     </CardWrapper>
   );

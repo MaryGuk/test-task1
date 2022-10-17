@@ -32,6 +32,8 @@ export const StyledButton = styled.button`
 export const PriceBoxWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: ${(props) =>
+    props.priceNotes ? "space-between" : "center"};
 `;
 
 export const PriceWrapper = styled.div`

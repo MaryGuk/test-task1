@@ -13,6 +13,7 @@ function App() {
           imageSrc:
             "https://github.com/MaryGuk/test-task1/blob/master/test-task1/public/resources/img1.png?raw=true",
           timings: ["12:00", "12:00", "12:00", "12:00"],
+          priceNotes: "1200 р на причале",
         },
         {
           title:
@@ -23,6 +24,7 @@ function App() {
           imageSrc:
             "https://github.com/MaryGuk/test-task1/blob/master/test-task1/public/resources/img1.png?raw=true",
           timings: ["12:00", "12:00", "12:00", "12:00"],
+          priceNotes: "1200 р на причале",
         },
         {
           title:
@@ -33,6 +35,7 @@ function App() {
           imageSrc:
             "https://github.com/MaryGuk/test-task1/blob/master/test-task1/public/resources/image2.png?raw=true",
           timings: ["12:00", "12:00", "12:00"],
+          priceNotes: "1200 р на причале",
         },
         {
           title:
@@ -42,6 +45,7 @@ function App() {
           imageSrc:
             "https://github.com/MaryGuk/test-task1/blob/master/test-task1/public/resources/image3.png?raw=true",
           timings: ["12:00", "12:00", "12:00", "12:00"],
+          priceNotes: "1200 р на причале",
         },
         {
           title:
@@ -52,7 +56,7 @@ function App() {
           timings: ["12:00", "12:00", "12:00", "12:00", "12:00"],
         },
       ].map(
-        ({ title, price, labelText, labelColor, imageSrc, timings }, idx) => (
+        ({ title, price, labelText, labelColor, imageSrc, timings, priceNotes }, idx) => (
           <ExcursionCard
             key={idx}
             timings={timings}
@@ -61,6 +65,7 @@ function App() {
             labelText={labelText}
             labelColor={labelColor}
             imageSrc={imageSrc}
+            priceNotes={priceNotes}
           />
         )
       )}
