@@ -1,5 +1,10 @@
 import Tick from "./tick.svg";
-import { DescriptionItemWrapper, StyledText, MainItemContent } from "./styled";
+import {
+  DescriptionItemWrapper,
+  StyledText,
+  MainItemContent,
+  TickImage,
+} from "./styled";
 
 const CardDescriptionItem = (props) => {
   const { text, additionalContent } = props.content;
@@ -7,7 +12,7 @@ const CardDescriptionItem = (props) => {
   return (
     <DescriptionItemWrapper>
       <MainItemContent>
-        <img src={Tick} />
+        <TickImage src={Tick} />
         <StyledText> {text} </StyledText>
       </MainItemContent>
       {additionalContent}

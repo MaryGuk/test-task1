@@ -10,5 +10,11 @@ export const CardContent = styled.div`
 `;
 
 export const Title = styled.div`
-  color: black;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: #404040;
+  margin-bottom: 17px;
 `;
