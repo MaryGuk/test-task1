@@ -1,9 +1,14 @@
 import styled from "styled-components";
+import { device } from "../../devices";
 
 export const DescriptionItemWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 11px;
+
+  @media ${device.desktop} {
+    flex-direction: row;
+  }
 `;
 
 export const MainItemContent = styled.div`

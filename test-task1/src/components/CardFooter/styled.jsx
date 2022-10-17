@@ -1,11 +1,16 @@
 import styled from "styled-components";
+import { device } from "../../devices";
 
 export const CardFooterWrapper = styled.div`
   padding: 0 7px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   margin-top: 35px;
+  justify-content: space-between;
+
+  @media ${device.desktop} {
+    justify-content: flex-start;
+  }
 `;
 
 export const StyledButton = styled.button`
@@ -19,6 +24,10 @@ export const StyledButton = styled.button`
   background-color: #fed74b;
   border: 0.5px solid #cba500;
   border-radius: 20px;
+
+  @media ${device.desktop} {
+    margin-left: 13px;
+  }
 `;
 export const PriceBoxWrapper = styled.div`
   display: flex;

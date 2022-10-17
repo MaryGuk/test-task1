@@ -1,9 +1,15 @@
 import styled from "styled-components";
+import { device } from "../../devices";
 
 export const CardImageBody = styled.div`
-  height: 220px;
   width: 100%;
   position: relative;
+  height: 220px;
+
+  @media ${device.desktop} {
+    height: 100%;
+    max-width: 473px;
+  }
 `;
 
 export const StyledImage = styled.img`
@@ -13,7 +19,6 @@ export const StyledImage = styled.img`
 `;
 
 export const LabelNew = styled.div`
-  top: 41px;
   position: absolute;
   background-color: #fed74b;
   padding: 8px 17px;
@@ -24,4 +29,9 @@ export const LabelNew = styled.div`
   line-height: 20px;
   color: #3e3e3e;
   width: min-content;
+  top: 41px;
+
+  @media ${device.desktop} {
+    top: 46px;
+ }
 `;
