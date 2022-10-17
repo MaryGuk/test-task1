@@ -51,17 +51,19 @@ function App() {
             "https://github.com/MaryGuk/test-task1/blob/master/test-task1/public/resources/image4.png?raw=true",
           timings: ["12:00", "12:00", "12:00", "12:00", "12:00"],
         },
-      ].map(({ title, price, labelText, labelColor, imageSrc,timings }, idx) => (
-        <ExcursionCard
-          key={idx}
-          timings={timings}
-          title={title}
-          price={price}
-          labelText={labelText}
-          labelColor={labelColor}
-          imageSrc={imageSrc}
-        />
-      ))}
+      ].map(
+        ({ title, price, labelText, labelColor, imageSrc, timings }, idx) => (
+          <ExcursionCard
+            key={idx}
+            timings={timings}
+            title={title}
+            price={price}
+            labelText={labelText}
+            labelColor={labelColor}
+            imageSrc={imageSrc}
+          />
+        )
+      )}
     </MainLayout>
   );
 }

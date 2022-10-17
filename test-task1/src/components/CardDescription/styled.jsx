@@ -35,7 +35,6 @@ export const TimingItem = styled.div`
   background: ${(props) => (props.selected ? "#6BA6FF" : "#d9e8ff")};
   border-radius: 11px;
   text-align: center;
-  width: 73px;
   height: 28px;
   margin-left: 7px;
   font-family: "Open Sans";
@@ -43,6 +42,11 @@ export const TimingItem = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;
+  width: 63px;
+
+  @media ${device.desktop} {
+    width: 73px;
+  }
 `;
 
 export const TimingsWrapper = styled.div`
