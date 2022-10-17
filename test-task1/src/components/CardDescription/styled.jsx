@@ -30,11 +30,19 @@ export const TickImage = styled.img`
   height: 12px;
   margin-top: 5px;
 `;
+
 export const TimingItem = styled.div`
-  background: #d9e8ff;
+  background: ${(props) => (props.selected ? "#6BA6FF" : "#d9e8ff")};
   border-radius: 11px;
-  padding: 1px 13px 2px;
+  text-align: center;
+  width: 73px;
+  height: 28px;
   margin-left: 7px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
 `;
 
 export const TimingsWrapper = styled.div`

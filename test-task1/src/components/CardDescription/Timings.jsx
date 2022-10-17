@@ -1,10 +1,19 @@
+import { useState } from "react";
 import { TimingItem, TimingsWrapper } from "./styled";
 
-const Timings = () => {
+const Timings = (props) => {
+  const [selectedTiming, setSelectedTiming] = useState();
+
   return (
     <TimingsWrapper>
-      {["12:00", "12:00", "12:00", "12:00"].map((time, idx) => (
-        <TimingItem key={idx}> {time} </TimingItem>
+      {props.timings?.map((time, idx) => (
+        <TimingItem
+          key={idx}
+          selected={selectedTiming === idx}
+          onClick={() => setSelectedTiming(idx)}
+        >
+          {time}
+        </TimingItem>
       ))}
     </TimingsWrapper>
   );

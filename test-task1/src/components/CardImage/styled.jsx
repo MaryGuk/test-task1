@@ -16,11 +16,15 @@ export const StyledImage = styled.img`
   height: 100%;
   width: 100%;
   border-radius: 16px 16px 0px 0px;
+
+  @media ${device.desktop} {
+    border-radius: 16px 0px 0px 16px;
+  }
 `;
 
 export const LabelNew = styled.div`
   position: absolute;
-  background-color: #fed74b;
+  background-color: ${(props) => props.labelColor || "#fed74b"};
   padding: 8px 17px;
   font-family: "Open Sans";
   font-style: normal;
@@ -29,9 +33,10 @@ export const LabelNew = styled.div`
   line-height: 20px;
   color: #3e3e3e;
   width: min-content;
+  white-space: nowrap;
   top: 41px;
 
   @media ${device.desktop} {
     top: 46px;
- }
+  }
 `;

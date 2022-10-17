@@ -4,22 +4,19 @@ import CardImage from "../CardImage";
 import ExcursionTime from "../ExcursionTime";
 import { CardContent, CardWrapper, Title, MainExcursionInfo } from "./styled";
 
-const ExcursionCard = () => {
+const ExcursionCard = (props) => {
   return (
     <CardWrapper>
-      <CardImage imageSrc="https://github.com/MaryGuk/test-task1/blob/master/test-task1/public/resources/img1.png?raw=true" />
+      <CardImage {...props} />
       <CardContent>
         <div>
           <MainExcursionInfo>
             <ExcursionTime hours={2} />
-            <Title>
-              АКЦИЯ - Обзорная экскурсия по рекам и каналам с остановками Hop on
-              Hop Off 2019
-            </Title>
+            <Title>{props.title}</Title>
           </MainExcursionInfo>
-          <CardDescription />
+          <CardDescription timings={props.timings} />
         </div>
-        <CardFooter />
+        <CardFooter price={props.price} />
       </CardContent>
     </CardWrapper>
   );

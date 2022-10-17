@@ -1,10 +1,10 @@
 import { CardFooterWrapper, StyledButton } from "./styled";
 import PriceBox from "./PriceBox";
 
-const CardFooter = () => {
+const CardFooter = (props) => {
   return (
     <CardFooterWrapper>
-      <PriceBox />
+      <PriceBox price={props.price} />
       <StyledButton> Подробнее </StyledButton>
     </CardFooterWrapper>
   );

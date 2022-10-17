@@ -4,7 +4,9 @@ const CardImage = (props) => {
   return (
     <CardImageBody>
       <StyledImage src={props.imageSrc} />
-      <LabelNew>НОВИНКА</LabelNew>
+      {props.labelText && (
+        <LabelNew labelColor={props.labelColor}>{props.labelText}</LabelNew>
+      )}
     </CardImageBody>
   );
 };
