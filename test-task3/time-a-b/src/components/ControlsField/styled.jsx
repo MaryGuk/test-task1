@@ -1,6 +1,17 @@
-import { Autocomplete } from "@mui/material";
+import { Box } from "@mui/material";
 import { styled } from "@mui/system";
 
-export const StyledAutocomplete = styled(Autocomplete)`
+export const StyledInputWrapper = styled(Box)`
   margin: 10px;
+`;
+
+export const EndAdornmentWrapper = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`;
+
+export const ArrowWrapper = styled(Box)`
+  cursor: pointer;
+  height: 24px;
 `;

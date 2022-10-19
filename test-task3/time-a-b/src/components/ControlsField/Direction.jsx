@@ -1,5 +1,5 @@
-import { TextField } from "@mui/material";
-import { StyledAutocomplete } from "./styled";
+import { TextField, Autocomplete } from "@mui/material";
+import { StyledInputWrapper } from "./styled";
 
 const Direction = (props) => {
   const directions = [
@@ -28,15 +28,17 @@ const Direction = (props) => {
   ];
 
   return (
-    <StyledAutocomplete
-      disablePortal
-      options={directions}
-      sx={{ width: 300 }}
-      onChange={(_, newValue) => props.setCurrentDirection(newValue)}
-      renderInput={(params) => (
-        <TextField {...params} label="Выбрать направление" />
-      )}
-    />
+    <StyledInputWrapper>
+      <Autocomplete
+        disablePortal
+        options={directions}
+        sx={{ width: 300 }}
+        onChange={(_, newValue) => props.setCurrentDirection(newValue)}
+        renderInput={(params) => (
+          <TextField {...params} label="Выбрать направление" />
+        )}
+      />
+    </StyledInputWrapper>
   );
 };
 

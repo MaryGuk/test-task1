@@ -12,11 +12,18 @@ export const HeaderImage = styled.img`
 export const AutocompletesWrapper = MUIStyled(Box)`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   height: 100vh;
   padding: 50px;
-  align-items: center;
   box-sizing: border-box;
+  background: linear-gradient(90deg, #b9deed, #efefef);
+  min-width: 400px;
+  align-content: center;
 `;
+
+// display: grid;
+// grid-column-gap:30px;
+// grid-row-gap:30px;
 
 export const MainContent = MUIStyled(Box)`
 display: flex;
