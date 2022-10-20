@@ -34,7 +34,7 @@ const Direction = (props) => {
         options={directions}
         sx={{ width: 300 }}
         value={props.value || ""}
-        onChange={(_, newValue) => props.setCurrentDirection(newValue)}
+        onChange={(_, newValue) => props.onChange(newValue)}
         renderInput={(params) => (
           <TextField {...params} label="Выбрать направление" />
         )}

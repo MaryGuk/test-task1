@@ -1,14 +1,15 @@
 import { MessageWrapper } from "./styled";
 
-
 const ResultMessages = ({ result }) => {
   return (
     <MessageWrapper>
-      <div>{result.currentDirection}</div>
-      <div>{result.journeyTime}</div>
-      <div>{result.journeyStart}</div>
-      <div>{result.journeyFinish}</div>
-      <div>{result.cost}</div>
+      <div>
+        {`Вы выбрали ${result.countTickets} билета по маршруту ${result.currentDirection} стоимостью ${result.cost}р.`}
+      </div>
+      <div>{`Это путешествие займет у вас ${result.journeyTime} минут.`}</div>
+      <div>
+        {`Теплоход отправляется в ${result.journeyStart}, а прибудет в ${result.journeyFinish}.`}
+      </div>
     </MessageWrapper>
   );
 };

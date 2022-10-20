@@ -3,7 +3,6 @@ import { AutocompletesWrapper } from "../MainPage/styled";
 import Direction from "./Direction";
 import DepartureTime from "./DepartureTime";
 import { ABTimetable, BATimetable } from "./timetables";
-import { TextField } from "@mui/material";
 import CountTickets from "./CountTickets";
 import SumButton from "./SumButton";
 import ResultMessages from "./ResultMessages/ResultMessages";
@@ -30,6 +29,7 @@ const ControlsField = () => {
     setTimeout(() => {
       setLoading(false);
       setResult({
+        countTickets,
         currentDirection: currentDirection?.label,
         journeyTime: (to?.value.duration || 0) + (from?.value.duration || 0),
         journeyStart: getTimeFromMinutesCount(startJourney?.value.start),
@@ -41,6 +41,25 @@ const ControlsField = () => {
     }, 2000);
   };
 
+  const handleChangeDirection = (newDirection) => {
+    setTo();
+    setFrom();
+    setCountTickets();
+    setCurrentDirection(newDirection);
+  };
+
+  const handleChangeTo = (newTo) => {
+    if (
+      from &&
+      newTo &&
+      from.value.start < newTo.value.start + newTo.value.duration
+    ) {
+      setFrom();
+    }
+
+    setTo(newTo);
+  };
+
   const showCountFieldAndSumButton =
     currentDirection &&
     (!currentDirection?.value?.to || to) &&
@@ -48,14 +67,11 @@ const ControlsField = () => {
 
   return (
     <AutocompletesWrapper>
-      <Direction
-        setCurrentDirection={setCurrentDirection}
-        value={currentDirection}
-      />
+      <Direction onChange={handleChangeDirection} value={currentDirection} />
       {currentDirection?.value?.to && (
         <DepartureTime
           value={to}
-          onChange={setTo}
+          onChange={handleChangeTo}
           timetable={ABTimetable}
           label="Выберите время из А в В"
         />
