@@ -18,7 +18,7 @@ const DepartureTime = (props) => {
       <Autocomplete
         disablePortal
         options={options}
-        value={props.value}
+        value={props.value || ""}
         onChange={(_, newValue) => props.onChange(newValue)}
         sx={{ width: 300 }}
         // onChange={(_, newValue) => props.setCurrentDirection(newValue)}
