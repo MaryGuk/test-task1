@@ -52,7 +52,7 @@ const ControlsField = () => {
     if (
       from &&
       newTo &&
-      from.value.start < newTo.value.start + newTo.value.duration
+      from.value.start < getStartWithFromPreviousTrip(newTo)
     ) {
       setFrom();
     }
