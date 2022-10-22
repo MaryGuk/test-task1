@@ -1,5 +1,3 @@
-import { duration } from "@mui/material";
-
 const addZeroPrefix = (number) => {
   const stringNumber = String(number);
 
@@ -10,12 +8,15 @@ const addZeroPrefix = (number) => {
   return stringNumber;
 };
 
-export const getTimeFromDate = (date) =>
-  `${addZeroPrefix(date.getHours())}:${addZeroPrefix(date.getMinutes())}`;
+export const getTimeFromDate = (date) => {
+  return `${addZeroPrefix(date.getHours())}:${addZeroPrefix(
+    date.getMinutes()
+  )}`;
+};
 
 const startStringsToTimetable = (startString, duration) =>
   startString.map((startString) => {
-    const start = new Date(startString);
+    const start = new Date(`${startString} GMT+0300`);
 
     return {
       label: getTimeFromDate(start),
