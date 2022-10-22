@@ -6,7 +6,7 @@ const DepartureTime = (props) => {
   const options = useMemo(() => {
     if (props.startWith) {
       return props.timetable.filter(
-        ({ value }) => value.start >= props.startWith
+        ({ value }) => value.start.getTime() >= props.startWith
       );
     }
 

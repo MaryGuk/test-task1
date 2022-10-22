@@ -18,14 +18,6 @@ export const AutocompletesWrapper = MUIStyled(Box)`
   background: linear-gradient(90deg, #b9deed, #efefef);
   min-width: 400px;
   align-content: center;
-
-  & :last-child {
-    grid-column-end: -1;
-  }
-
-  & :first-child {
-    grid-column-start: 1;
-  }
 `;
 
 export const MainContent = MUIStyled(Box)`

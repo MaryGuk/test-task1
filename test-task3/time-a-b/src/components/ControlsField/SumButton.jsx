@@ -1,4 +1,4 @@
-import { StyledInputWrapper } from "./styled";
+import { FullWidthInputWrapper } from "./styled";
 import AnchorIcon from "@mui/icons-material/Anchor";
 import { useEffect, useState } from "react";
 import { Box, Button } from "@mui/material";
@@ -16,7 +16,7 @@ const SumButton = ({ children, loading, ...props }) => {
   }, []);
 
   return (
-    <StyledInputWrapper fullwidth>
+    <FullWidthInputWrapper>
       <Button disabled={loading} {...props}>
         {loading ? (
           <Box display="flex">
@@ -26,7 +26,7 @@ const SumButton = ({ children, loading, ...props }) => {
           children
         )}
       </Button>
-    </StyledInputWrapper>
+    </FullWidthInputWrapper>
   );
 };
 

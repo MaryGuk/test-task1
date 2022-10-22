@@ -2,22 +2,19 @@ import { useState } from "react";
 import { AutocompletesWrapper } from "../MainPage/styled";
 import Direction from "./Direction";
 import DepartureTime from "./DepartureTime";
-import { ABTimetable, BATimetable } from "./timetables";
+import { ABTimetable, BATimetable, getTimeFromDate } from "./timetables";
 import CountTickets from "./CountTickets";
 import SumButton from "./SumButton";
 import ResultMessages from "./ResultMessages/ResultMessages";
 
-const getStartWithFromPreviousTrip = ({ value: { start, duration } }) =>
-  start + duration;
-
-const getTimeFromMinutesCount = (minutes) =>
-  `${Math.floor(minutes / 60)}:${minutes % 60}`;
+const getFinishTripTime = ({ value: { start, duration } }) =>
+  start.getTime() + duration * 60 * 1000;
 
 const ControlsField = () => {
   const [currentDirection, setCurrentDirection] = useState();
   const [to, setTo] = useState();
   const [from, setFrom] = useState();
-  const [countTickets, setCountTickets] = useState();
+  const [countTickets, setCountTickets] = useState("1");
   const [result, setResult] = useState();
   const [loading, setLoading] = useState(false);
 
@@ -32,9 +29,9 @@ const ControlsField = () => {
         countTickets,
         currentDirection: currentDirection?.label,
         journeyTime: (to?.value.duration || 0) + (from?.value.duration || 0),
-        journeyStart: getTimeFromMinutesCount(startJourney?.value.start),
-        journeyFinish: getTimeFromMinutesCount(
-          finishJourney.value.start + finishJourney.value.duration
+        journeyStart: getTimeFromDate(startJourney?.value.start),
+        journeyFinish: getTimeFromDate(
+          new Date(getFinishTripTime(finishJourney))
         ),
         cost: countTickets * (currentDirection?.value.cost || 0),
       });
@@ -45,7 +42,7 @@ const ControlsField = () => {
     setTo();
     setFrom();
     setResult();
-    setCountTickets();
+    setCountTickets("1");
     setCurrentDirection(newDirection);
   };
 
@@ -53,7 +50,7 @@ const ControlsField = () => {
     if (
       from &&
       newTo &&
-      from.value.start < getStartWithFromPreviousTrip(newTo)
+      from.value.start.getTime() < getFinishTripTime(newTo)
     ) {
       setFrom();
     }
@@ -72,10 +69,6 @@ const ControlsField = () => {
     setResult();
     setCountTickets(newCount);
   };
-
-  // const timezone = new Date("2021-08-21 18:00:00") => {
-  //   new Date(timezone.getTime() +50 *60*1000)
-  // }
 
   const showCountFieldAndSumButton =
     currentDirection &&
@@ -97,17 +90,14 @@ const ControlsField = () => {
         <DepartureTime
           value={from}
           onChange={handleChangeFrom}
-          startWith={to && getStartWithFromPreviousTrip(to)}
+          startWith={to && getFinishTripTime(to)}
           timetable={BATimetable}
           label="Выберите время из В в А"
         />
       )}
       {showCountFieldAndSumButton && (
         <>
-          <CountTickets
-            value={countTickets || "0"}
-            onChange={handleCountTicket}
-          />
+          <CountTickets value={countTickets} onChange={handleCountTicket} />
           <SumButton loading={loading} onClick={handleSumButton}>
             Посчитать
           </SumButton>

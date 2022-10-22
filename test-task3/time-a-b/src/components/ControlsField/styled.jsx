@@ -3,7 +3,10 @@ import { styled } from "@mui/system";
 
 export const StyledInputWrapper = styled(Box)`
   margin: 10px;
-  ${(props) => (props.fullwidth ? "grid-column: 1 / -1" : "")}
+`;
+
+export const FullWidthInputWrapper = styled(StyledInputWrapper)`
+  grid-column: 1 / -1;
 `;
 
 export const EndAdornmentWrapper = styled(Box)`

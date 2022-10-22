@@ -28,7 +28,7 @@ const CountTickets = (props) => {
         sx={{ width: "300px" }}
         label="Количество билетов"
         onChange={handleChange}
-        value={props.value}
+        value={String(props.value)}
         InputProps={{
           endAdornment: props.value && (
             <InputAdornment position="end">
