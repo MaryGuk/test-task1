@@ -1,6 +1,7 @@
-import textField from "./overrides/MuiInputBase";
+import inputBase from "./overrides/MuiInputBase";
 import autocomplete from "./overrides/MuiAutocomplete";
 import button from "./overrides/MuiButton";
+import textField from "./overrides/MuiTextField";
 import { createTheme } from "@mui/material";
 
 export default createTheme({
@@ -9,10 +10,16 @@ export default createTheme({
       styleOverrides: autocomplete,
     },
     MuiInputBase: {
-      styleOverrides: textField,
+      styleOverrides: inputBase,
     },
     MuiButton: {
       styleOverrides: button,
     },
+    MuiTextField: {
+      styleOverrides: textField,
+    },
+  },
+  typography: {
+    fontFamily: "Montserrat",
   },
 });

@@ -44,6 +44,7 @@ const ControlsField = () => {
   const handleChangeDirection = (newDirection) => {
     setTo();
     setFrom();
+    setResult();
     setCountTickets();
     setCurrentDirection(newDirection);
   };
@@ -57,14 +58,24 @@ const ControlsField = () => {
       setFrom();
     }
 
+    setResult();
+
     setTo(newTo);
   };
 
+  const handleChangeFrom = (newFrom) => {
+    setResult();
+    setFrom(newFrom);
+  };
+
+  const handleCountTicket = (newCount) => {
+    setResult();
+    setCountTickets(newCount);
+  };
 
   // const timezone = new Date("2021-08-21 18:00:00") => {
   //   new Date(timezone.getTime() +50 *60*1000)
   // }
-
 
   const showCountFieldAndSumButton =
     currentDirection &&
@@ -85,7 +96,7 @@ const ControlsField = () => {
       {currentDirection?.value?.from && (
         <DepartureTime
           value={from}
-          onChange={setFrom}
+          onChange={handleChangeFrom}
           startWith={to && getStartWithFromPreviousTrip(to)}
           timetable={BATimetable}
           label="Выберите время из В в А"
@@ -95,7 +106,7 @@ const ControlsField = () => {
         <>
           <CountTickets
             value={countTickets || "0"}
-            onChange={setCountTickets}
+            onChange={handleCountTicket}
           />
           <SumButton loading={loading} onClick={handleSumButton}>
             Посчитать

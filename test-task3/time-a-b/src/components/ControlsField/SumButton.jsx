@@ -16,7 +16,7 @@ const SumButton = ({ children, loading, ...props }) => {
   }, []);
 
   return (
-    <StyledInputWrapper>
+    <StyledInputWrapper fullwidth>
       <Button disabled={loading} {...props}>
         {loading ? (
           <Box display="flex">
