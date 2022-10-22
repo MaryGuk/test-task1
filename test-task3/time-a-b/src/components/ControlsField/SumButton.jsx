@@ -19,7 +19,7 @@ const SumButton = ({ children, loading, ...props }) => {
     <StyledInputWrapper>
       <Button disabled={loading} {...props}>
         {loading ? (
-          <Box>
+          <Box display="flex">
             <AnchorIcon sx={{ transform: `rotate(${rotation}deg)` }} />
           </Box>
         ) : (

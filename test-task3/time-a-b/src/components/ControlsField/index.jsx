@@ -60,6 +60,12 @@ const ControlsField = () => {
     setTo(newTo);
   };
 
+
+  // const timezone = new Date("2021-08-21 18:00:00") => {
+  //   new Date(timezone.getTime() +50 *60*1000)
+  // }
+
+
   const showCountFieldAndSumButton =
     currentDirection &&
     (!currentDirection?.value?.to || to) &&

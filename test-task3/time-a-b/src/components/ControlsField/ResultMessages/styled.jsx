@@ -4,7 +4,7 @@ import { styled } from "@mui/system";
 export const MessageWrapper = styled(Box)`
   display: flex;
   flex-direction: column;
-  padding: 10px 15px ;
+  padding: auto;
   justify-content: flex-start;
   width: 700px;
   color: black;
